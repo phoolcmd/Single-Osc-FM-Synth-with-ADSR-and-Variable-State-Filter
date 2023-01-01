@@ -5,3 +5,10 @@ I made this synth by following <a href="https://www.youtube.com/@TheAudioProgram
 tutorials on youtube.
 
 ![image](https://user-images.githubusercontent.com/121768237/210183183-47c3f689-f7a4-45c8-ac29-ea4eec03eb65.png)
+
+Build from Source:
+
+Download Projucer (JUCE IDE)
+Setup your IDE (XCode for Mac, VisualStudio for Windows)
+Open Simpletron Synth.jucer with Projucer
+Export & Build
