@@ -1,16 +1,14 @@
 
 #include "OscData.h"
 
-void OscData::prepareToPlay(double sampleRate, int samplesPerBlock, int outputChannels)
+void OscData::prepareToPlay(juce::dsp::ProcessSpec& spec)
 {
-    juce::dsp::ProcessSpec spec;
-    spec.maximumBlockSize = samplesPerBlock;
-    spec.sampleRate = sampleRate;
-    spec.numChannels = outputChannels;
-    
+   
+    fmOsc.prepare(spec);
+    gain.prepare(spec);
     prepare (spec);
-    fmOsc.prepare (spec);
-    gain.prepare (spec);
+  
+ ;
 }
 
 void OscData::setWaveType (const int oscSelection)
@@ -51,7 +49,7 @@ void OscData::getNextAudioBlock(juce::dsp::AudioBlock<float>& block)
     {
         for (int s = 0; s < block.getNumSamples(); ++s)
         {
-            fmModulator = fmOsc.processSample(block.getSample(ch, s));
+            fmModulator = fmOsc.processSample(block.getSample(ch, s)) * fmDepth;
         }
     }
     process(juce::dsp::ProcessContextReplacing<float>(block));

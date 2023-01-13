@@ -18,7 +18,7 @@ void FilterData::prepareToPlay (double sampleRate, int samplesPerBlock, int outp
     spec.numChannels = outputChannels;
     
     filter.prepare (spec);
-    lfo.prepareToPlay (sampleRate, samplesPerBlock, outputChannels);
+    lfo.prepareToPlay (spec);
 }
 
 

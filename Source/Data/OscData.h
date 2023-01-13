@@ -6,7 +6,7 @@
 class OscData : public juce::dsp::Oscillator<float>
 {
 public:
-    void prepareToPlay (double sampleRate, int samplesPerBlock, int outputChannels);
+    void prepareToPlay (juce::dsp::ProcessSpec& spec);
     void setWaveType(const int oscSelection);
     void setWaveFrequency(const int midiNoteNumber);
     void updateFm(const float oscGain, const float freq, const float depth);
