@@ -42,7 +42,7 @@ void FilterComponent::paint (juce::Graphics& g)
     g.setColour (juce::Colours::green);
     g.setFont (fontHeight);
     g.setFont (g.getCurrentFont().boldened());
-    g.drawText (name, 20, 15, 100, 25, juce::Justification::left);
+    g.drawText (name, 20, 15, 200, 25, juce::Justification::left);
 }
 
 void FilterComponent::resized()
@@ -53,11 +53,11 @@ void FilterComponent::resized()
     const auto startX = 18;
     const auto startY = 40;
     
-    filterTypeSelector.setBounds (startX, startY, 90, 25);
-    cutoffLabel.setBounds (25, 70, labelWidth, labelHeight);
-    cutoffSlider.setBounds (25, 85, dialSize, dialSize);
-    resonanceLabel.setBounds (25,160, labelWidth, labelHeight);
-    resonanceSlider.setBounds (25, 175, dialSize, dialSize);
+    filterTypeSelector.setBounds (startX, startY, 100, 25);
+    cutoffLabel.setBounds (120, 15, labelWidth, labelHeight);
+    cutoffSlider.setBounds (120, 30, dialSize, dialSize);
+    resonanceLabel.setBounds (190,15, labelWidth, labelHeight);
+    resonanceSlider.setBounds (190, 30, dialSize, dialSize);
 }
 
 using SliderAttachment = juce::AudioProcessorValueTreeState::SliderAttachment;
