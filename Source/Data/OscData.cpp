@@ -53,6 +53,7 @@ void OscData::getNextAudioBlock(juce::dsp::AudioBlock<float>& block)
         }
     }
     process(juce::dsp::ProcessContextReplacing<float>(block));
+    gain.process(juce::dsp::ProcessContextReplacing<float>(block));
 }
 
 void OscData::updateFm(const float oscGain, const float freq, const float depth)
