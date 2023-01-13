@@ -34,10 +34,10 @@ private:
     juce::Slider sustainSlider;
     juce::Slider releaseSlider;
     
-    juce::Label attackLabel { "A", "A" };
-    juce::Label decayLabel { "D", "D" };
-    juce::Label sustainLabel { "S", "S" };
-    juce::Label releaseLabel { "R", "R" };
+    juce::Label attackLabel { "Attack", "A" };
+    juce::Label decayLabel { "Decay", "D" };
+    juce::Label sustainLabel { "Sustain", "S" };
+    juce::Label releaseLabel { "Release", "R" };
 
     juce::String componentName{ "" };
         

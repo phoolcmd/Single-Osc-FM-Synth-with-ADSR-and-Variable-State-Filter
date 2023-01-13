@@ -31,14 +31,14 @@ public:
     void updateModAdsr(const float attack, const float decay, const float sustain, const float release);
     OscData& getOscillator() {return osc;}
     AdsrData& getAdsr() { return adsr; }
-    FilterData& getFilter() { return filter1;}
+    FilterData& getFilter() { return filter;}
     
 private:
     juce::AudioBuffer<float> synthBuffer;
 
     OscData osc;
     AdsrData adsr;
-    FilterData filter1;
+    FilterData filter;
     AdsrData modAdsr;
     juce::dsp::Gain<float> gain;
     bool isPrepared { false };

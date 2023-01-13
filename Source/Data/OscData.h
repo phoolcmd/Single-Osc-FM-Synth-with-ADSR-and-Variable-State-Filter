@@ -9,7 +9,7 @@ public:
     void prepareToPlay (double sampleRate, int samplesPerBlock, int outputChannels);
     void setWaveType(const int oscSelection);
     void setWaveFrequency(const int midiNoteNumber);
-    void setFMParams (const int oscChoice, const float oscGain, const float freq, const float depth);
+    void updateFm(const float oscGain, const float freq, const float depth);
     void getNextAudioBlock(juce::dsp::AudioBlock<float>& block);
 private:
     juce::dsp::Oscillator<float> fmOsc { [](float x) { return std::sin (x); }};

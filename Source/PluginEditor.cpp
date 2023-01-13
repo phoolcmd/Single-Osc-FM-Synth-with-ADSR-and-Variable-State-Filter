@@ -14,10 +14,12 @@ BasicSynthAudioProcessorEditor::BasicSynthAudioProcessorEditor(BasicSynthAudioPr
 : AudioProcessorEditor (&p)
 , audioProcessor (p)
 , osc1 (audioProcessor.apvts, "OSC1", "OSC1GAIN", "OSC1FMFREQ", "OSC1FMDEPTH")
-, filter (audioProcessor.apvts, "FILTERTYPE", "FILTERCUTOFF", "FILTERRESONANCE")
 , adsr ("Amp Envelope", audioProcessor.apvts, "ATTACK", "DECAY", "SUSTAIN", "RELEASE")
+, filter(audioProcessor.apvts, "FILTERTYPE", "FILTERCUTOFF", "FILTERRESONANCE")
 , modAdsr("Mod Envelope", audioProcessor.apvts, "MODATTACK", "MODDECAY","MODSUSTAIN", "MODRELEASE")
 {
+    setSize(825, 275);
+
     addAndMakeVisible (osc1);
     addAndMakeVisible (filter);
     addAndMakeVisible (adsr);
@@ -26,7 +28,6 @@ BasicSynthAudioProcessorEditor::BasicSynthAudioProcessorEditor(BasicSynthAudioPr
     osc1.setName ("Oscillator");
     filter.setName ("Filter");
     
-    setSize (825, 275);
 }
 
 BasicSynthAudioProcessorEditor::~BasicSynthAudioProcessorEditor()

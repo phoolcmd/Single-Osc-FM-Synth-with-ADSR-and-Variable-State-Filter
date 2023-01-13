@@ -236,34 +236,33 @@ void BasicSynthAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, ju
     {
         if (auto voice = dynamic_cast<SynthVoice*>(synth.getVoice(i)))
         {
+            //AMP ADSR
             auto& attack = *apvts.getRawParameterValue ("ATTACK");
             auto& decay = *apvts.getRawParameterValue ("DECAY");
             auto& sustain = *apvts.getRawParameterValue ("SUSTAIN");
             auto& release = *apvts.getRawParameterValue ("RELEASE");
-            
+            //OSC 
             auto& osc1Choice = *apvts.getRawParameterValue ("OSC1");
             auto& osc1Gain = *apvts.getRawParameterValue ("OSC1GAIN");
             auto& osc1FmFreq = *apvts.getRawParameterValue ("OSC1FMFREQ");
             auto& osc1FmDepth = *apvts.getRawParameterValue ("OSC1FMDEPTH");
-
+            //MOD ADSR
             auto& modAttack = *apvts.getRawParameterValue("MODATTACK");
             auto& modDecay = *apvts.getRawParameterValue("MODDECAY");
             auto&modSustain = *apvts.getRawParameterValue("MODSUSTAIN");
             auto& modRelease = *apvts.getRawParameterValue("MODRELEASE");
-
+            //FILTER
             auto& filterType = *apvts.getRawParameterValue("FILTERTYPE");
             auto& filterCutoff = *apvts.getRawParameterValue("FILTERCUTOFF");
             auto& filterResonance = *apvts.getRawParameterValue("FILTERRESONANCE");
 
             voice->getOscillator().setWaveType(osc1Choice);
-            voice->getOscillator().setFMParams(osc1Choice, osc1Gain, osc1FmFreq, osc1FmDepth);
-            voice->updateFilter(filterType, filterCutoff, filterResonance);
+            voice->getOscillator().updateFm( osc1Gain, osc1FmFreq, osc1FmDepth);
             voice->updateAdsr(attack.load(), decay.load(), sustain.load(), release.load());
             voice->updateFilter(filterType.load(), filterCutoff.load(), filterResonance.load());
             voice->updateModAdsr(modAttack, modDecay, modSustain, modRelease);
         }
     }
-    
 
     synth.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
     /*
