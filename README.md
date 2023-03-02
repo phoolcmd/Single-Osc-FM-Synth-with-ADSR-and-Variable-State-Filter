@@ -6,11 +6,14 @@ This is a basic synthesizer built using the JUCE API. It features a single oscil
 # Building from Source
 To build this synthesizer from source, you'll need to follow these steps:
 
-Download and install the Projucer IDE from the JUCE website.
-Set up your development environment by installing XCode on Mac or Visual Studio on Windows.
-Open the Single-Osc-FM-Synth-with-ADSR-and-Variable-State-Filter.jucer file in Projucer.
-Make any necessary changes to the project settings, such as adding additional modules or changing the output directory.
-Export the project to your desired build format (XCode or Visual Studio) and build the project.
+1. Download and install the Projucer IDE from the [JUCE Website](https://juce.com/download/).
+2. Set up your development environment by installing XCode on Mac or Visual Studio on Windows.
+3. Open the **'.jucer' ** file in Projucer.
+4. Make any necessary changes to the project settings, such as adding additional modules or changing the output directory.
+5. Export the project to your desired build format (XCode or Visual Studio) and build the project.
+
+
+
 
 # Overview
 The FM Synthesizer with ADSR and Variable State Filter is a single oscillator synthesizer built using the JUCE API. It features the following components:
