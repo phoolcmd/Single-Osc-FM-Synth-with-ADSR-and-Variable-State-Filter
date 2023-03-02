@@ -1,6 +1,4 @@
-# Single-Osc-FM-Synth-with-ADSR-and-Variable-State-Filter
-
-**FM Synthesizer with ADSR and Variable State Filter**
+# FM Synthesizer with ADSR and Variable State Filter
 This is a basic synthesizer built using the JUCE API. It features a single oscillator FM synth with ADSR envelope, variable state filter, and modulation envelope. This synthesizer is suitable for producing a wide range of sounds, from classic bell-like FM timbres to more complex, evolving textures.
 
 # Building from Source
