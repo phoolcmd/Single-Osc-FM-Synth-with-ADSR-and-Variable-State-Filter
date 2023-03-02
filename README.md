@@ -18,10 +18,10 @@ To build this synthesizer from source, you'll need to follow these steps:
 # Overview
 The FM Synthesizer with ADSR and Variable State Filter is a single oscillator synthesizer built using the JUCE API. It features the following components:
 
-Oscillator: A single oscillator with adjustable frequency and depth controls.
-ADSR Envelope: An ADSR envelope with adjustable attack, decay, sustain, and release times.
-Variable State Filter: A variable state filter with adjustable cutoff frequency and resonance controls.
-Modulation Envelope: A modulation envelope with adjustable attack, decay, sustain, and release times.
+- **Oscillator:** A single oscillator with adjustable frequency and depth controls.
+- **ADSR Envelope:** An ADSR envelope with adjustable attack, decay, sustain, and release times.
+- **Variable State Filter:** A variable state filter with adjustable cutoff frequency and resonance controls.
+- **Modulation Envelope:** A modulation envelope with adjustable attack, decay, sustain, and release times.
 
 # Programming Concepts
 During the development of this synthesizer, several key programming concepts were learned and implemented. These include:
