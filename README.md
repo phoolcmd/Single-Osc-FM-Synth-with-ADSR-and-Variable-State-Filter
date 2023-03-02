@@ -23,6 +23,6 @@ Modulation Envelope: A modulation envelope with adjustable attack, decay, sustai
 # Programming Concepts
 During the development of this synthesizer, several key programming concepts were learned and implemented. These include:
 
-Object-oriented programming principles: The use of object-oriented programming principles to design and implement the various components of the synthesizer, including encapsulation and inheritance.
-Digital signal processing (DSP): The use of DSP techniques to process audio signals, including techniques such as filtering and envelope shaping.
-JUCE API: The use of the JUCE API to develop audio plugins and applications, including the use of the JUCE GUI library to create a custom user interface.
+- Object-oriented programming: The FM Synthesizer was designed with an object-oriented approach, which allowed for easy management of complex functionality, such as the modulation algorithm and envelope generation.
+- Signal processing: The synthesis of the audio signal involves manipulating digital signals in real time. Signal processing techniques, such as filtering, modulation, and envelope shaping, were used to achieve the desired sound.
+- Event-driven programming: The user interface of the FM Synthesizer is event-driven, meaning that it responds to user actions, such as clicking on a button or adjusting a knob. Event-driven programming was used to create an intuitive and interactive user experience.
