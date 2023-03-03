@@ -7,8 +7,7 @@ To build this synthesizer from source, you'll need to follow these steps:
 1. Download and install the Projucer IDE from the [JUCE Website](https://juce.com/download/).
 2. Set up your development environment by installing XCode on Mac or Visual Studio on Windows.
 3. Open the **'Simpletron Synth.jucer'** file in Projucer.
-4. Make any necessary changes to the project settings, such as adding additional modules or changing the output directory.
-5. Export the project to your desired build format (XCode or Visual Studio) and build the project.
+4. Export the project to your desired build format (XCode or Visual Studio) and build the project.
 # Overview
 The FM Synthesizer with ADSR and Variable State Filter is a single oscillator synthesizer built using the JUCE API. It features the following components:
 
