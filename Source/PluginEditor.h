@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include <juce_graphics/juce_graphics.h>
 #include "PluginProcessor.h"
 #include "UI/OscComponent.h"
 #include "UI/FilterComponent.h"
@@ -33,7 +34,7 @@ private:
     AdsrComponent adsr;
     FilterComponent filter;
     AdsrComponent modAdsr;
-    
+
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BasicSynthAudioProcessorEditor)
 };

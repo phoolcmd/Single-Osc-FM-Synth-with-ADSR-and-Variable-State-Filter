@@ -6,6 +6,9 @@
               pluginDesc="A simple single oscillator synth with ADSR">
   <MAINGROUP id="GMAd0a" name="Simpletron Synth">
     <GROUP id="{94B15673-C4AB-0DC6-A3B8-2ACAADBBCC0A}" name="Source">
+      <GROUP id="{A4A3588E-5740-48A5-09A0-E45BDD8D9838}" name="Resources">
+        <FILE id="D0xeRz" name="my_font.ttf.ttf" compile="0" resource="1" file="Source/Resources/my_font.ttf.ttf"/>
+      </GROUP>
       <FILE id="KZUq2x" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="ADuWL2" name="PluginProcessor.h" compile="0" resource="0"

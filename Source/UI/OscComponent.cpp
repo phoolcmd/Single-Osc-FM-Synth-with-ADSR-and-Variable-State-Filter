@@ -1,12 +1,3 @@
-/*
-  ==============================================================================
-
-    OscComponent.cpp
-    Created: 14 Feb 2021 6:51:39pm
-    Author:  Joshua Hodge
-
-  ==============================================================================
-*/
 
 #include <JuceHeader.h>
 #include "OscComponent.h"
@@ -38,8 +29,20 @@ void OscComponent::paint (juce::Graphics& g)
 {
     g.fillAll (juce::Colours::black);
     auto bounds = getLocalBounds();
-    g.setColour (juce::Colours::green);
-    g.drawRoundedRectangle (bounds.toFloat().reduced (10.0f), 5.0f, 2.0f);
+
+
+    juce::Colour gradientStart = juce::Colours::green;
+    juce::Colour gradientEnd = juce::Colours::transparentWhite;
+
+
+    juce::ColourGradient gradient(gradientStart, 0, 0, gradientEnd, 0, 100, false);
+
+    //g.setColour (juce::Colours::green);
+
+    g.setGradientFill(gradient);
+
+
+    g.drawRoundedRectangle (bounds.toFloat().reduced (10.0f), 0.0f, 2.0f);
     
     g.setColour (juce::Colours::green);
     g.setFont (fontHeight);
@@ -73,14 +76,18 @@ void OscComponent::setSliderParams (juce::Slider& slider, juce::Label& label, st
     slider.setSliderStyle (juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
     slider.setColour(juce::Slider::rotarySliderFillColourId, juce::Colours::white);
     slider.setColour(juce::Slider::thumbColourId, juce::Colours::green);
+  
 
-
-    slider.setTextBoxStyle (juce::Slider::TextBoxBelow, true, textBoxWidth, textBoxHeight);
+    juce::Colour textBoxColour = juce::Colours::transparentWhite;
+    slider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, textBoxWidth, textBoxHeight);
+    slider.setColour(juce::Slider::textBoxOutlineColourId, textBoxColour);
     slider.setTextBoxIsEditable(true);
-    addAndMakeVisible (slider);
+    addAndMakeVisible(slider);
     label.setFont (fontHeight);
     label.setColour(juce::Label::textColourId, juce::Colours::green);
     label.setJustificationType (juce::Justification::centred);
+    label.setBorderSize(juce::BorderSize<int>(0)); // set the component's border size to 0
+  
     addAndMakeVisible (label);
     
     attachment = std::make_unique<SliderAttachment>(apvts, paramId, slider);

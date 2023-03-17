@@ -8,6 +8,8 @@
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
+#include <JuceHeader.h>
+#include <juce_graphics/juce_graphics.h>
 
 //==============================================================================
 BasicSynthAudioProcessorEditor::BasicSynthAudioProcessorEditor(BasicSynthAudioProcessor& p)
@@ -27,7 +29,7 @@ BasicSynthAudioProcessorEditor::BasicSynthAudioProcessorEditor(BasicSynthAudioPr
     
     osc1.setName ("Oscillator");
     filter.setName ("Filter");
-    
+
 }
 
 BasicSynthAudioProcessorEditor::~BasicSynthAudioProcessorEditor()

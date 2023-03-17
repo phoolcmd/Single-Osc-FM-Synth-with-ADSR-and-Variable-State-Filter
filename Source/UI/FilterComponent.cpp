@@ -1,12 +1,4 @@
-/*
-  ==============================================================================
 
-    FilterComponent.cpp
-    Created: 18 Feb 2021 10:00:39pm
-    Author:  Joshua Hodge
-
-  ==============================================================================
-*/
 
 #include <JuceHeader.h>
 #include "FilterComponent.h"
@@ -36,7 +28,17 @@ void FilterComponent::paint (juce::Graphics& g)
 {
     g.fillAll (juce::Colours::black);
     auto bounds = getLocalBounds();
-    g.setColour (juce::Colours::green);
+
+    juce::Colour gradientStart = juce::Colours::green;
+    juce::Colour gradientEnd = juce::Colours::transparentWhite;
+
+
+    juce::ColourGradient gradient(gradientStart, 0, 0, gradientEnd, 0, 100, false);
+
+    //g.setColour (juce::Colours::green);
+
+    g.setGradientFill(gradient);
+    //g.setColour (juce::Colours::green);
     g.drawRoundedRectangle (bounds.toFloat().reduced (10.0f), 5.0f, 2.0f);
     
     g.setColour (juce::Colours::green);
