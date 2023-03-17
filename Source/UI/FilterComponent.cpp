@@ -2,10 +2,12 @@
 
 #include <JuceHeader.h>
 #include "FilterComponent.h"
+#include "MyLookAndFeel.h"
 
 //==============================================================================
 FilterComponent::FilterComponent (juce::AudioProcessorValueTreeState& apvts, juce::String filterTypeId, juce::String cutoffId, juce::String resonanceId)
 {
+    MyLookAndFeel myLookAndFeel;
     juce::StringArray filterTypeChoices { "Low Pass", "Band Pass", "High Pass" };
     filterTypeSelector.addItemList (filterTypeChoices, 1);
     filterTypeSelector.setSelectedItemIndex (0);
@@ -42,7 +44,7 @@ void FilterComponent::paint (juce::Graphics& g)
     g.drawRoundedRectangle (bounds.toFloat().reduced (10.0f), 5.0f, 2.0f);
     
     g.setColour (juce::Colours::green);
-    g.setFont (fontHeight);
+    g.setFont(myCustomFont.withHeight(fontHeight));
     g.setFont (g.getCurrentFont().boldened());
     g.drawText (name, 20, 15, 200, 25, juce::Justification::left);
 }
@@ -58,24 +60,30 @@ void FilterComponent::resized()
     filterTypeSelector.setBounds (startX, startY, 100, 25);
     cutoffLabel.setBounds (120, 15, labelWidth, labelHeight);
     cutoffSlider.setBounds (120, 30, dialSize, dialSize);
-    resonanceLabel.setBounds (190,15, labelWidth, labelHeight);
-    resonanceSlider.setBounds (190, 30, dialSize, dialSize);
+    resonanceLabel.setBounds (230,15, labelWidth, labelHeight);
+    resonanceSlider.setBounds (230, 30, dialSize, dialSize);
 }
 
 using SliderAttachment = juce::AudioProcessorValueTreeState::SliderAttachment;
 
 void FilterComponent::setSliderParams (juce::Slider& slider, juce::Label& label, std::unique_ptr<SliderAttachment>& attachment, juce::String paramId, juce::AudioProcessorValueTreeState& apvts)
-{
+{   
+    MyLookAndFeel myLookAndFeel;
     
     slider.setSliderStyle (juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag);
     slider.setColour(juce::Slider::rotarySliderFillColourId, juce::Colours::white);
     slider.setColour(juce::Slider::thumbColourId, juce::Colours::green);
 
+
     slider.setTextBoxIsEditable(true);
     slider.setTextBoxStyle (juce::Slider::TextBoxBelow, true, textBoxWidth, textBoxHeight);
+
+    juce::Colour textBoxColour = juce::Colours::transparentWhite;
+    slider.setColour(juce::Slider::textBoxOutlineColourId, textBoxColour);
+
     addAndMakeVisible (slider);
     
-    label.setFont (fontHeight);
+    label.setFont(myCustomFont.withHeight(fontHeight));
     label.setColour(juce::Label::textColourId, juce::Colours::green);
     label.setJustificationType (juce::Justification::centred);
     addAndMakeVisible (label);

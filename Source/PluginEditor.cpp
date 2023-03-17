@@ -20,7 +20,7 @@ BasicSynthAudioProcessorEditor::BasicSynthAudioProcessorEditor(BasicSynthAudioPr
 , filter(audioProcessor.apvts, "FILTERTYPE", "FILTERCUTOFF", "FILTERRESONANCE")
 , modAdsr("Mod Envelope", audioProcessor.apvts, "MODATTACK", "MODDECAY","MODSUSTAIN", "MODRELEASE")
 {
-    setSize(700, 275);
+    setSize(750, 275);
 
     addAndMakeVisible (osc1);
     addAndMakeVisible (filter);
@@ -44,10 +44,10 @@ void BasicSynthAudioProcessorEditor::paint (juce::Graphics& g)
 
 void BasicSynthAudioProcessorEditor::resized()
 {
-    const auto oscWidth = 350;
+    const auto oscWidth = 400;
     const auto oscHeight = 120;
     osc1.setBounds (0, 0, oscWidth, oscHeight);
-    adsr.setBounds (0, osc1.getBottom(), 350, 150);
+    adsr.setBounds (0, osc1.getBottom(), oscWidth, 150);
     filter.setBounds(osc1.getRight(), 0, 350, 120);
     modAdsr.setBounds(adsr.getRight(), filter.getBottom(), 350, 150);
 }

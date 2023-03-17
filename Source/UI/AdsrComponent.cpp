@@ -35,7 +35,7 @@ void AdsrComponent::paint (juce::Graphics& g)
     g.drawRoundedRectangle (bounds.toFloat().reduced (10.0f), 5.0f, 2.0f);
     
     g.setColour (juce::Colours::green);
-    g.setFont (fontHeight);
+    g.setFont (myCustomFont.withHeight(fontHeight));
     g.setFont (g.getCurrentFont().boldened());
     g.drawText (componentName, 20, 15, 100, 25, juce::Justification::left);
 }
@@ -52,7 +52,7 @@ void AdsrComponent::resized()
     const auto labelStartY = 45;
     const auto labelWidth = 70;
     const auto labelHeight = 18;
-    const auto labelOffset = 10;
+    const auto labelOffset = 0;
     
     attackLabel.setBounds (sliderStartX - labelOffset, labelStartY, labelWidth, labelHeight);
     attackSlider.setBounds (sliderStartX, sliderStartY, sliderSize, sliderSize);
@@ -76,10 +76,14 @@ void AdsrComponent::setSliderParams (juce::Slider& slider, juce::Label& label, s
     slider.setColour(juce::Slider::thumbColourId, juce::Colours::green);
 
     slider.setTextBoxIsEditable(true);
-    slider.setTextBoxStyle (juce::Slider::TextBoxBelow, true, textBoxWidth, textBoxHeight);
-    addAndMakeVisible (slider);
+    slider.setTextBoxStyle(juce::Slider::TextBoxBelow, true, textBoxWidth, textBoxHeight);
+
+    juce::Colour textBoxColour = juce::Colours::transparentWhite;
+    slider.setColour(juce::Slider::textBoxOutlineColourId, textBoxColour);
+
+    addAndMakeVisible(slider);
     
-    label.setFont (fontHeight);
+    label.setFont(myCustomFont.withHeight(fontHeight));
     label.setColour(juce::Label::textColourId, juce::Colours::green);
     label.setJustificationType (juce::Justification::centred);
     addAndMakeVisible (label);

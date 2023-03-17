@@ -39,9 +39,12 @@ private:
     
     juce::String name { "" };
     
-    static constexpr float fontHeight { 15.0f };
+    static constexpr float fontHeight { 20.0f };
     static constexpr int textBoxWidth { 50 };
     static constexpr int textBoxHeight { 20 };
-    
+
+    juce::Font myCustomFont = juce::Typeface::createSystemTypefaceFor(BinaryData::my_font_ttf, BinaryData::my_font_ttfSize);
+
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OscComponent)
 };

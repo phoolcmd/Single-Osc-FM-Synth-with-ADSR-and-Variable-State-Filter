@@ -9,7 +9,7 @@
 namespace BinaryData
 {
 
-//================== my_font.ttf.ttf ==================
+//================== my_font.ttf ==================
 static const unsigned char temp_binary_data_0[] =
 { 0,1,0,0,0,11,0,128,0,3,0,48,79,83,47,50,68,118,149,160,0,0,1,56,0,0,0,96,99,109,97,112,188,152,187,217,0,0,5,72,0,0,3,86,103,97,115,112,255,255,0,3,0,0,105,100,0,0,0,8,103,108,121,102,111,133,15,96,0,0,10,124,0,0,87,52,104,101,97,100,5,16,101,27,0,0,
 0,188,0,0,0,54,104,104,101,97,14,199,7,250,0,0,0,244,0,0,0,36,104,109,116,120,69,47,2,127,0,0,1,152,0,0,3,176,108,111,99,97,183,250,163,6,0,0,8,160,0,0,1,218,109,97,120,112,1,4,0,232,0,0,1,24,0,0,0,32,110,97,109,101,42,45,136,238,0,0,97,176,0,0,5,105,
@@ -317,7 +317,7 @@ static const unsigned char temp_binary_data_0[] =
 223,0,178,0,179,0,182,0,183,0,196,0,180,0,181,0,197,0,130,0,194,0,135,0,171,0,190,0,191,0,188,0,247,1,6,1,7,1,8,1,9,0,140,0,152,0,168,0,154,0,153,0,239,0,165,0,146,0,156,0,167,0,148,0,149,1,10,1,11,7,117,110,105,48,48,66,50,7,117,110,105,48,48,66,51,
 7,117,110,105,48,48,66,57,7,117,110,105,48,50,67,57,4,108,105,114,97,6,112,101,115,101,116,97,4,69,117,114,111,9,97,102,105,105,54,49,51,53,50,7,117,110,105,70,48,48,49,7,117,110,105,70,48,48,50,0,0,0,0,0,0,1,255,255,0,2,0,0 };
 
-const char* my_font_ttf_ttf = (const char*) temp_binary_data_0;
+const char* my_font_ttf = (const char*) temp_binary_data_0;
 
 
 const char* getNamedResource (const char* resourceNameUTF8, int& numBytes);
@@ -331,7 +331,7 @@ const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
 
     switch (hash)
     {
-        case 0x9e0137d0:  numBytes = 26988; return my_font_ttf_ttf;
+        case 0xf74c0329:  numBytes = 26988; return my_font_ttf;
         default: break;
     }
 
@@ -341,12 +341,12 @@ const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
 
 const char* namedResourceList[] =
 {
-    "my_font_ttf_ttf"
+    "my_font_ttf"
 };
 
 const char* originalFilenames[] =
 {
-    "my_font.ttf.ttf"
+    "my_font.ttf"
 };
 
 const char* getNamedResourceOriginalFilename (const char* resourceNameUTF8);

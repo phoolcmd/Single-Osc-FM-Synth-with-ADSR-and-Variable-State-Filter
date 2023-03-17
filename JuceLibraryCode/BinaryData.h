@@ -8,8 +8,8 @@
 
 namespace BinaryData
 {
-    extern const char*   my_font_ttf_ttf;
-    const int            my_font_ttf_ttfSize = 26988;
+    extern const char*   my_font_ttf;
+    const int            my_font_ttfSize = 26988;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
     const int namedResourceListSize = 1;

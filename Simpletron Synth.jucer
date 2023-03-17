@@ -7,7 +7,7 @@
   <MAINGROUP id="GMAd0a" name="Simpletron Synth">
     <GROUP id="{94B15673-C4AB-0DC6-A3B8-2ACAADBBCC0A}" name="Source">
       <GROUP id="{A4A3588E-5740-48A5-09A0-E45BDD8D9838}" name="Resources">
-        <FILE id="D0xeRz" name="my_font.ttf.ttf" compile="0" resource="1" file="Source/Resources/my_font.ttf.ttf"/>
+        <FILE id="D0xeRz" name="my_font.ttf" compile="0" resource="1" file="Source/Resources/my_font.ttf"/>
       </GROUP>
       <FILE id="KZUq2x" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
@@ -35,6 +35,7 @@
               file="Source/UI/FilterComponent.cpp"/>
         <FILE id="To8r9m" name="FilterComponent.h" compile="0" resource="0"
               file="Source/UI/FilterComponent.h"/>
+        <FILE id="BOdnrA" name="MyLookAndFeel.h" compile="0" resource="0" file="Source/UI/MyLookAndFeel.h"/>
         <FILE id="r4ztso" name="OscComponent.cpp" compile="1" resource="0"
               file="Source/UI/OscComponent.cpp"/>
         <FILE id="B8R97R" name="OscComponent.h" compile="0" resource="0" file="Source/UI/OscComponent.h"/>
